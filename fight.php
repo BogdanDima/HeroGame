@@ -15,8 +15,8 @@ $stats->checkStats($players);
 
 while( $players["attacker"][1]["health"] > 0 && $players["defender"][1]["health"] > 0){
 
-    if($players["attacker"][0] == "Orderus") $players["defender"][1]["health"] = $orderusAction->PlayerSpecialSkill($players, "attack");
-    else $players["defender"][1]["health"] = $orderusAction->PlayerSpecialSkill($players, "defend");
+    if($players["attacker"][0] == "Orderus") $action->playerAttackPhase($players, "attack");
+    else $players["defender"][1]["health"] = $action->playerAttackPhase($players, "defend");
     
     $stats->checkStats($players);
 
