@@ -15,7 +15,7 @@ $stats->checkStats($players);
 
 while( $players["attacker"][1]["health"] > 0 && $players["defender"][1]["health"] > 0){
 
-    if($players["attacker"][0] == "EMAG(Orderus)") $action->playerAttackPhase($players, "attack");
+    if($players["attacker"][0] == "EMAG(Orderus)") $players["defender"][1]["health"] = $action->playerAttackPhase($players, "attack");
     else $players["defender"][1]["health"] = $action->playerAttackPhase($players, "defend");
     
     $stats->checkStats($players);

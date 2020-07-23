@@ -67,13 +67,13 @@ class Action {
 			echo "Attacker chance = ".$orderus_skill_chance."<br>";
 			$basicDamage = $this->attack($players["attacker"][1], $players["defender"][1]);
 			$skillDamage = $playerAction->RapidStrike($basicDamage);
-			$players["defender"][1]["health"]-=$skillDamage;
+			return $players["defender"][1]["health"]-=$skillDamage;
 
         } else if ( $orderus_skill_chance <= 20 && $stance == "defend" ) {
 
 			$basicDamage = $this->attack($players["attacker"][1], $players["defender"][1]);
 			$skillDamage = $playerAction->MagicShield($basicDamage);
-			$players["defender"][1]["health"]-=$skillDamage;
+			return $players["defender"][1]["health"]-=$skillDamage;
 
         } else {
             return $players["defender"][1]["health"] -= $this->attack($players["attacker"][1], $players["defender"][1]);
