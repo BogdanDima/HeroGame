@@ -9,13 +9,13 @@ $orderusAction = new PlayerAction();
 $orderus = $stats->setStats($stats->orderus);
 $beast = $stats->setStats($stats->beast);
 
-$players = $action->chooseFirstAttacker($orderus, $beast, "Orderus", "Beast");
+$players = $action->chooseFirstAttacker($orderus, $beast, "EMAG(Orderus)", "CEL.RO(Beast)");
 
 $stats->checkStats($players);
 
 while( $players["attacker"][1]["health"] > 0 && $players["defender"][1]["health"] > 0){
 
-    if($players["attacker"][0] == "Orderus") $action->playerAttackPhase($players, "attack");
+    if($players["attacker"][0] == "EMAG(Orderus)") $action->playerAttackPhase($players, "attack");
     else $players["defender"][1]["health"] = $action->playerAttackPhase($players, "defend");
     
     $stats->checkStats($players);
